@@ -74,17 +74,42 @@ var picturew = pictures[t];
   <meta content="Daniel Kauffman" name="author" />
 
 <script type=text/javascript>
-function ajaxFunction(event){
+
+function voted(event){
+
+    // Ajax stuff
 	var ajaxRequest = new XMLHttpRequest;  // The variable that makes Ajax possible!
+	
+	ajaxRequest.onreadystatechange = function(){
+	    if(ajaxRequest.readyState == 4){
+	    	//document.getElementById('winner').appendChild(ajaxRequest.responseText);
+	    	var response = ajaxRequest.responseText;
+	    	//alert(response);
+	    	var img1 = response.split("@@")[0];
+	    	var img2 = response.split("@@")[1];
+	    	var vote_count = response.split("@@")[2];
+	    	
+	    	//alert(img1);
+	    	//alert(img2);
+	    	document.getElementById('img1').src = img1;
+	    	document.getElementById('img2').src = img2;
+	    	document.getElementById('winner_votes').innerHTML = "Votes : " + vote_count;
+	    }
+    }
 	
 	// Just some regex no big deal really
 	var pathExtract = /^[a-z]+:\/\/\/?[^\/]+(\/[^?]*)/i;
     var path = (pathExtract.exec(event.originalTarget.src))[1].slice(1);
-    alert(path)
+    document.getElementById('winner').src = path;
+    //alert(path)
     
 	var query = "?path=" + path;
 	ajaxRequest.open("GET", "vote.php" + query, true);
-	ajaxRequest.send(null); 
+	ajaxRequest.send(null);
+	
+	
+	//alert('down here dawg');
+
 }
 
 </script>  
@@ -110,37 +135,42 @@ Cutest Baby!</strong></span><br />
       <table style="width: 700px;" border="0" cellpadding="0" cellspacing="0">
         <tbody>
           <tr>
-            <td style="vertical-align: top; text-align: center;" class="style2">
+          
+          
+                <!-- The winner from last time dawg -->
+                <td style="vertical-align: top; text-align: center;" class="style2">
+                    <div style='width: 200px; border: solid red thin; overflow: auto;'>
+                    <p id = 'winner_votes' style = 'border: solid blue thin;'></p>
+                    <img id = 'winner' src='' width='200px'/><br/>
+                    </div>
+                <br/>
+                </td>
             
-            <script language="JavaScript"><!--
-            document.write('<div class="imgcontainer"><a href="' + t + '.html"> <img src="images/' + picturew + '.jpg" class="captioned" title="' + picturew + '" width="200" height="150" /><div class="caption1">' + picturew + '<br />Wins = <br />Win %=</div></div>');
-
-// --></script>
-            <br />
-            </td>
+            
             <td style="vertical-align: top; width: 20px;">&nbsp;<br />
             </td>
             
-            
-            <td style="vertical-align: top;" class="style2">
-            <?php
-            // Database stuff
-            $user="642393_ed";
-            $password="williamandmary";
-            //$database="baby-war_99k_pic";
-            $database="babywar_99k_pic";
+                <!-- Here goes image 1 -->
+                <td style="vertical-align: top;" class="style2">
+               <?php
+                // Database stuff
+                $user="642393_ed";
+                $password="williamandmary";
+                //$database="baby-war_99k_pic";
+                $database="babywar_99k_pic";
 
-            mysql_connect("localhost",$user,$password);
-            @mysql_select_db($database) or die( "Unable to select database");
-            
-            // Grab random image 1
-            $query = "SELECT path FROM babys ORDER BY RAND();";
-            $output = mysql_query($query);
-            $image = mysql_result($output, 0);
-            mysql_close();
-            echo "<div class='imgcontainer'><a href='index.php' onclick='ajaxFunction(event)'><image id='img1' src='$image' class='captioned' width='400' height='300'/></a></div>";
-            ?>
-            </td>
+                mysql_connect("localhost",$user,$password);
+                @mysql_select_db($database) or die( "Unable to select database");
+
+                // Grab random image 1
+                $query = "SELECT path FROM babys ORDER BY RAND();";
+                $output = mysql_query($query);
+                $image = mysql_result($output, 0);
+                mysql_close();
+                echo "<div class='imgcontainer'><image id='img1' onclick='voted(event)' src='$image' class='captioned' width='400' height='300'/></div>";
+                ?>
+                <div id='new_img'></div>
+                </td>
             
             
             <td class="style1" alt="VS" title="VS">
@@ -149,25 +179,26 @@ Cutest Baby!</strong></span><br />
             </td>
             
             
-            <td style="vertical-align: top;">
-            <?php
-            // Database stuff
-            $user="642393_ed";
-            $password="williamandmary";
-            //$database="baby-war_99k_pic";
-            $database="babywar_99k_pic";
+                <!-- Here goes image 2 -->
+                <td style="vertical-align: top;">
+                <?php
+                // Database stuff
+                $user="642393_ed";
+                $password="williamandmary";
+                //$database="baby-war_99k_pic";
+                $database="babywar_99k_pic";
 
-            mysql_connect("localhost",$user,$password);
-            @mysql_select_db($database) or die( "Unable to select database");
-            
-            // Grab random image 1
-            $query = "SELECT path FROM babys ORDER BY RAND();";
-            $output = mysql_query($query);
-            $image = mysql_result($output, 0);
-            mysql_close();
-            echo "<div class='imgcontainer'><<a href='index.php' onclick='ajaxFunction(event)'>><image id='img2' src='$image' class='captioned' width='400' height='300'/></div>";
-            ?>
-            </td>
+                mysql_connect("localhost",$user,$password);
+                @mysql_select_db($database) or die( "Unable to select database");
+
+                // Grab random image 1
+                $query = "SELECT path FROM babys ORDER BY RAND();";
+                $output = mysql_query($query);
+                $image = mysql_result($output, 0);
+                mysql_close();
+                echo "<div class='imgcontainer'><image id='img2' onclick='voted(event)' src='$image' class='captioned' width='400' height='300'/></div>";
+                ?>
+                </td>
             
             
             <td style="vertical-align: top; width: 20px;">&nbsp;<br />
