@@ -22,8 +22,6 @@ position:relative;
 float:right;
 }
 
-
-
 .imgcontainer1 {
 position:relative;
 float:left;
@@ -38,9 +36,11 @@ color:#56BAEC;
 text-align: center;
 
 }
+
+
 .caption1 {
 position:absolute;
-bottom:+10;
+bottom:10;
 left:0;
 text-align:center;
 font-size:x-large;
@@ -72,7 +72,27 @@ var picture1 = pictures[s];
 var picturew = pictures[t];
 // --></script>
   <meta content="Daniel Kauffman" name="author" />
-</head><body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" alink="fuchsia" link="fuchsia" vlink="#990099">
+
+<script type=text/javascript>
+function ajaxFunction(event){
+	var ajaxRequest = new XMLHttpRequest;  // The variable that makes Ajax possible!
+	
+	// Just some regex no big deal really
+	var pathExtract = /^[a-z]+:\/\/\/?[^\/]+(\/[^?]*)/i;
+    var path = (pathExtract.exec(event.originalTarget.src))[1].slice(1);
+    alert(path)
+    
+	var query = "?path=" + path;
+	ajaxRequest.open("GET", "vote.php" + query, true);
+	ajaxRequest.send(null); 
+}
+
+</script>  
+</head>
+
+
+
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" alink="fuchsia" link="fuchsia" vlink="#990099">
 <div style="text-align: center;"><img style="width: 88px; height: 88px;" alt="B" src="../letters/b.jpg" /><img style="width: 88px; height: 88px;" alt="A" src="../letters/a.jpg" /><img style="width: 88px; height: 88px;" alt="B" src="../letters/b.jpg" /><img style="width: 88px; height: 88px;" alt="Y" src="../letters/y.jpg" /><img style="width: 88px; height: 88px;" alt="-" src="../letters/-.jpg" /><img style="width: 88px; height: 88px;" alt="V" src="../letters/largev.jpg" /><img style="width: 88px; height: 88px;" alt="O" src="../letters/o.jpg" /><img style="width: 88px; height: 88px;" alt="T" src="../letters/t.jpg" /><img style="width: 88px; height: 88px;" alt="E" src="../letters/e.jpg" /></div>
 
 <p style="color: fuchsia;" class="stylepink"><a rel="me" href="../index.html"><strong>Home</strong></a><strong>&nbsp;|&nbsp;<a rel="me" href="search.html">Search</a>&nbsp;|&nbsp;<a rel="me " href="beautiful.html">Beautiful
@@ -91,6 +111,7 @@ Cutest Baby!</strong></span><br />
         <tbody>
           <tr>
             <td style="vertical-align: top; text-align: center;" class="style2">
+            
             <script language="JavaScript"><!--
             document.write('<div class="imgcontainer"><a href="' + t + '.html"> <img src="images/' + picturew + '.jpg" class="captioned" title="' + picturew + '" width="200" height="150" /><div class="caption1">' + picturew + '<br />Wins = <br />Win %=</div></div>');
 
@@ -99,22 +120,56 @@ Cutest Baby!</strong></span><br />
             </td>
             <td style="vertical-align: top; width: 20px;">&nbsp;<br />
             </td>
+            
+            
             <td style="vertical-align: top;" class="style2">
-            <script language="JavaScript"><!--
-								document.write('<div class="imgcontainer"><a href="index.html"> <img src="images/' + picture + '.jpg" class="captioned" title="' + picture + '" width="400" height="300"/><div class="caption1">' + picture + '</div></div>');
-						
-								// --></script>
-            <br />
+            <?php
+            // Database stuff
+            $user="642393_ed";
+            $password="williamandmary";
+            //$database="baby-war_99k_pic";
+            $database="babywar_99k_pic";
+
+            mysql_connect("localhost",$user,$password);
+            @mysql_select_db($database) or die( "Unable to select database");
+            
+            // Grab random image 1
+            $query = "SELECT path FROM babys ORDER BY RAND();";
+            $output = mysql_query($query);
+            $image = mysql_result($output, 0);
+            mysql_close();
+            echo "<div class='imgcontainer'><a href='index.php' onclick='ajaxFunction(event)'><image id='img1' src='$image' class='captioned' width='400' height='300'/></a></div>";
+            ?>
             </td>
+            
+            
             <td class="style1" alt="VS" title="VS">
             <p class="MsoNormal" align="center"> <img style="width: 60px; height: 60px;" alt="-" src="../letters/smallv.jpg" /></p>
             <p class="MsoNormal" align="center"> <img style="width: 60px; height: 60px;" alt="-" src="../letters/s.jpg" />&nbsp;</p>
             </td>
+            
+            
             <td style="vertical-align: top;">
-            <script language="JavaScript"><!--
-								document.write('<div class="imgcontainer1"><a href="index.html"> <img src="images/' + picture1 + '.jpg" class="captioned" title="' + picture1 + '" width="400" height="300" /><div class="caption1">' + picture1 + '</div></div>');
-								// --></script><br />
+            <?php
+            // Database stuff
+            $user="642393_ed";
+            $password="williamandmary";
+            //$database="baby-war_99k_pic";
+            $database="babywar_99k_pic";
+
+            mysql_connect("localhost",$user,$password);
+            @mysql_select_db($database) or die( "Unable to select database");
+            
+            // Grab random image 1
+            $query = "SELECT path FROM babys ORDER BY RAND();";
+            $output = mysql_query($query);
+            $image = mysql_result($output, 0);
+            mysql_close();
+            echo "<div class='imgcontainer'><<a href='index.php' onclick='ajaxFunction(event)'>><image id='img2' src='$image' class='captioned' width='400' height='300'/></div>";
+            ?>
             </td>
+            
+            
             <td style="vertical-align: top; width: 20px;">&nbsp;<br />
             </td>
             <td class="style1" alt="atlanticbrideandbaby.com" title="atlanticbrideandbaby.com">

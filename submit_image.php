@@ -6,7 +6,6 @@
 
 <body>
     <h1> Well this worked... </h1>
-</body>
 
 <?php
 
@@ -30,6 +29,7 @@ $id = mysql_insert_id() or die ('Error getting the id');
 
 // Now I have the file's real path (with unique ID appended)
 $real_path = $target_path . $id;
+$db_path = "/" . $real_path;
 $query = "UPDATE babys SET path='$real_path' WHERE id='$id'";
 mysql_query($query) or die ('Error updating file path with id');
 
@@ -47,4 +47,5 @@ echo "<p>All Done!</p>";
 
 ?>
 
+</body>
 </html>
