@@ -87,23 +87,38 @@ function voted(event){
 	    	//alert(response);
 	    	var img1 = response.split("@@")[0];
 	    	var img2 = response.split("@@")[1];
-	    	var vote_count = response.split("@@")[2];
+	    	var w_vote_count = response.split("@@")[2];
+	    	var w_election_count = response.split("@@")[3];
 	    	
-	    	//alert(img1);
-	    	//alert(img2);
+	    	alert("votes:" + w_vote_count);
+	    	alert("elections:" + w_election_count);
+	    	
 	    	document.getElementById('img1').src = img1;
 	    	document.getElementById('img2').src = img2;
-	    	document.getElementById('winner_votes').innerHTML = "Votes : " + vote_count;
+	    	document.getElementById('winner_votes').innerHTML = "Votes : " + w_vote_count;
+	    	var percent = Math.round((w_vote_count / w_election_count) * 100);
+	    	document.getElementById('winner_percent').innerHTML = "Percentage : " + percent + "%";
 	    }
     }
 	
+	
+	// Winner
 	// Just some regex no big deal really
 	var pathExtract = /^[a-z]+:\/\/\/?[^\/]+(\/[^?]*)/i;
-    var path = (pathExtract.exec(event.target.src))[1].slice(1);
-    document.getElementById('winner').src = path;
-    //alert(path)
-    
-	var query = "?path=" + path;
+	var winner = (pathExtract.exec(event.target.src))[1].slice(1);
+	
+	// Loser
+	if (event.target.id === 'img1')	{ var loser_id = 'img2'; }
+	else { var loser_id = 'img1'; }
+	var loser = document.getElementById(loser_id).src
+	loser = pathExtract.exec(loser)[1].slice(1);
+	
+	//alert("winner:" + winner);
+	//alert("loser:" + loser);
+
+    document.getElementById('winner').src = winner;
+    //document.getElementById('loser').src = loser;
+	var query = "?winner=" + winner + "&loser=" + loser;
 	ajaxRequest.open("GET", "vote.php" + query, true);
 	ajaxRequest.send(null);
 	
@@ -141,6 +156,7 @@ Cutest Baby!</strong></span><br />
                 <td style="vertical-align: top; text-align: center;" class="style2">
                     <div style='width: 200px; border: solid red thin; overflow: auto;'>
                     <p id = 'winner_votes' style = 'border: solid blue thin;'></p>
+                    <p id = 'winner_percent' style = 'border: solid blue thin;'></p>
                     <img id = 'winner' src='' width='200px'/><br/>
                     </div>
                 <br/>

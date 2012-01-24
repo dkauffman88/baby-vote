@@ -29,7 +29,9 @@ $id = mysql_insert_id() or die ('Error getting the id');
 
 // Now I have the file's real path (with unique ID appended)
 $real_path = $target_path . $id;
-$db_path = "/" . $real_path;
+//$real_path = preg_replace("/[^A-Za-z0-9]/","",$real_path); // Replaces / which is an issue
+$real_path = str_replace(" ", "", $real_path);
+
 $query = "UPDATE babys SET path='$real_path' WHERE id='$id'";
 mysql_query($query) or die ('Error updating file path with id');
 
