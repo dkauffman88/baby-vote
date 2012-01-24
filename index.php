@@ -90,8 +90,8 @@ function voted(event){
 	    	var w_vote_count = response.split("@@")[2];
 	    	var w_election_count = response.split("@@")[3];
 	    	
-	    	alert("votes:" + w_vote_count);
-	    	alert("elections:" + w_election_count);
+	    	//alert("votes:" + w_vote_count);
+	    	//alert("elections:" + w_election_count);
 	    	
 	    	document.getElementById('img1').src = img1;
 	    	document.getElementById('img2').src = img2;
