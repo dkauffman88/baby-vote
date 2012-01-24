@@ -99,7 +99,7 @@ function voted(event){
 	
 	// Just some regex no big deal really
 	var pathExtract = /^[a-z]+:\/\/\/?[^\/]+(\/[^?]*)/i;
-    var path = (pathExtract.exec(event.originalTarget.src))[1].slice(1);
+    var path = (pathExtract.exec(event.target.src))[1].slice(1);
     document.getElementById('winner').src = path;
     //alert(path)
     
