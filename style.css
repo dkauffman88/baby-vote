@@ -1,0 +1,60 @@
+/* Style sheet for baby-vote.com */
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+    width: 980px;
+    margin: 0px auto;
+}
+
+header{
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+}
+
+nav a{
+    color: fuchsia;
+}
+
+section.vote{
+    margin: 0px auto;
+    padding: 10px;
+    width: 920px;
+    overflow: auto;    
+}
+
+section.vote .election{
+    border: solid black thin;
+    padding: 2px;
+    margin-bottom: 10px;
+    box-shadow: 8px 8px 5px #888;
+}
+
+section.vote *{
+    float: left;
+}
+
+section.vote .winner{
+    width: 200px;
+    text-align: center;
+    border: solid black thin;
+    padding: 2px;
+    margin: 0px 10px;
+    box-shadow: 8px 8px 5px #888;
+}
+
+section.vote .winner *{
+    float: none;
+}
+
+section.vote .vs *{
+    float: none;
+}
+    
+    
