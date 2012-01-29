@@ -32,6 +32,15 @@ $query=mysql_query("SELECT elections FROM babys WHERE path = '$winner'");
 $query_row=mysql_fetch_array($query);
 $w_election_count = $query_row['elections'];
 
+// Loser stats
+$query=mysql_query("SELECT votes FROM babys WHERE path = '$loser'");
+$query_row=mysql_fetch_array($query);
+$l_vote_count = $query_row['votes'];
+
+$query=mysql_query("SELECT elections FROM babys WHERE path = '$loser'");
+$query_row=mysql_fetch_array($query);
+$l_election_count = $query_row['elections'];
+
 
 // Grab random images
 $query = "SELECT path FROM babys ORDER BY RAND();";
@@ -46,6 +55,6 @@ while ($image2 == $image1)
 }
 mysql_close();
 
-echo $image1 . '@@' . $image2 . '@@' . $w_vote_count . '@@' . $w_election_count;
+echo $image1 . '@@' . $image2 . '@@' . $w_vote_count . '@@' . $w_election_count . '@@' . $l_vote_count . '@@' . $l_election_count;
 
 ?>

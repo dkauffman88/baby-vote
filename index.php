@@ -18,20 +18,28 @@ function voted(event){
 	    if(ajaxRequest.readyState == 4){
 	    	//document.getElementById('winner').appendChild(ajaxRequest.responseText);
 	    	var response = ajaxRequest.responseText;
-	    	//alert(response);
+	    	
+	    	// Get everything
 	    	var img1 = response.split("@@")[0];
 	    	var img2 = response.split("@@")[1];
 	    	var w_vote_count = response.split("@@")[2];
 	    	var w_election_count = response.split("@@")[3];
+	    	var l_vote_count = response.split("@@")[4];
+	    	var l_election_count = response.split("@@")[5];
 	    	
-	    	//alert("votes:" + w_vote_count);
-	    	//alert("elections:" + w_election_count);
-	    	
+	    	// Set new images
 	    	document.getElementById('img1').src = img1;
 	    	document.getElementById('img2').src = img2;
+	    	
+	    	// Set winner
 	    	document.getElementById('winner_votes').innerHTML = "Votes : " + w_vote_count;
 	    	var percent = Math.round((w_vote_count / w_election_count) * 100);
-	    	document.getElementById('winner_percent').innerHTML = "Percentage : " + percent + "%";
+	    	document.getElementById('winner_percent').innerHTML = "Win Rate : " + percent + "%";
+	    	
+	    	// Set loser
+	    	document.getElementById('loser_votes').innerHTML = "Votes : " + l_vote_count;
+	    	var percent = Math.round((l_vote_count / l_election_count) * 100);
+	    	document.getElementById('loser_percent').innerHTML = "Win Rate : " + percent + "%";
 	    }
     }	
 	
@@ -47,6 +55,7 @@ function voted(event){
 	loser = pathExtract.exec(loser)[1].slice(1);
 
     document.getElementById('winner').src = winner;
+    document.getElementById('loser').src = loser;
 	var query = "?winner=" + winner + "&loser=" + loser;
 	ajaxRequest.open("GET", "vote.php" + query, true);
 	ajaxRequest.send(null);
@@ -75,13 +84,24 @@ function voted(event){
 <a href="./submit.html"><strong>Submit Baby Pictures</strong></a>
 </nav>
 
+<!-- Content Begins Here -->
 <section class="vote">
-    <div class="winner"> <!-- Winner image from last election -->
-        <p>Winner</p>
-        <hr/>
-        <p id = 'winner_votes'></p>
-        <p id = 'winner_percent'e></p>
-        <img id = 'winner' src='' width='200px'/>
+    <div>
+        <div class="winner"> <!-- Winner image from last election -->
+            <p>Winner</p>
+            <hr/>
+            <p id = 'winner_votes'></p>
+            <p id = 'winner_percent'></p>
+            <img id = 'winner' src='' width='150px'/>
+        </div>
+        
+        <div class="winner">
+            <p>Loser</p>
+            <hr/>
+            <p id = 'loser_votes'></p>
+            <p id = 'loser_percent'></p>
+            <img id = 'loser' src='' width='150px'/>
+        </div>
     </div>
     
     <div class="election">
@@ -113,25 +133,26 @@ function voted(event){
         echo "<img src='./letters/s.jpg' /></div>";
         echo "<image class='baby' id='img2' onclick='voted(event)' src='$image2' width='300'/>";
         ?>
+        
     </div>
     <br/>
     <br/>
 </section>
+<!-- Content Ends Here -->
 
-
-      <div align="center"><strong>Choose The Cutest Baby!</strong></span><br/>
-      <a href="index.html"><strong>Draw!</strong></a><br/>
+<footer>
+    <strong>Choose The Cutest Baby!</strong></span><br/>
+    <a id='draw' href="./index.php"><strong>Draw!</strong></a><br/>
       
-      <g:plusone><!-- Place this render call where appropriate -->
-      <script type="text/javascript">
+    <g:plusone><!-- Place this render call where appropriate -->
+    <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-      </script>
-      </g:plusone></p>
-      </div>
-
+    </script>
+    </g:plusone></p>
+</footer>
 </body>
 </html>

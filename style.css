@@ -25,15 +25,8 @@ nav a{
 section.vote{
     margin: 0px auto;
     padding: 10px;
-    width: 920px;
-    overflow: auto;    
-}
-
-section.vote .election{
-    border: solid black thin;
-    padding: 2px;
-    margin-bottom: 10px;
-    box-shadow: 8px 8px 5px #888;
+    width: 910px;
+    overflow: auto;  
 }
 
 section.vote *{
@@ -41,12 +34,31 @@ section.vote *{
 }
 
 section.vote .winner{
-    width: 200px;
+    width: 150px;
     text-align: center;
     border: solid black thin;
-    padding: 2px;
-    margin: 0px 10px;
+    padding: 1px;
+    margin: 0px 10px 20px 10px;
     box-shadow: 8px 8px 5px #888;
+    float: none;
+}
+
+section.vote img.baby{
+    border: solid black thin;
+    box-shadow: 8px 8px 5px #888;
+    padding: 1px;
+    margin: 0px 10px;
+}
+
+section.vote img.baby:hover{
+    -moz-transform: scale(1.02);
+    -moz-transition-duration: 100ms;
+    -webkit-transform: scale(1.02);
+    -webkit-transition-duration: 100ms;
+    -ms-transform: scale(1.02);
+    -ms-transition-duration: 100ms;
+    -o-transform: scale(1.02);
+    -o-transition-duration: 100ms;
 }
 
 section.vote .winner *{
@@ -55,6 +67,15 @@ section.vote .winner *{
 
 section.vote .vs *{
     float: none;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a{
+    color: fuchsia;
 }
     
     
