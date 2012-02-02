@@ -11,6 +11,7 @@ body{
 }
 
 header{
+/* We might want to change the size of the image. Also I want the header to be centered over the VS */	
     text-align: center;
 }
 
@@ -70,6 +71,7 @@ section.vote .winner *{
 }
 
 section.vote .vs *{
+/* insert additional code here so that this is centered in table*/
     float: none;
 }
 
