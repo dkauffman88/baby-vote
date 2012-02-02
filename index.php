@@ -68,15 +68,7 @@ function voted(event){
 
 <body>
 <header>
-<img alt="B" src="../letters/b.jpg" />
-<img alt="A" src="../letters/a.jpg" />
-<img alt="B" src="../letters/b.jpg" />
-<img alt="Y" src="../letters/y.jpg" />
-<img alt="-" src="../letters/-.jpg" />
-<img alt="V" src="../letters/largev.jpg" />
-<img alt="O" src="../letters/o.jpg" />
-<img alt="T" src="../letters/t.jpg" />
-<img alt="E" src="../letters/e.jpg" />
+<img alt="BABY-VOTE" src="../letters/header.jpg" />
 </header>
 
 <nav>
@@ -128,8 +120,7 @@ function voted(event){
         mysql_close();
         
         echo "<image class='baby' id='img1' onclick='voted(event)' src='$image1' width='300'/>";
-        echo "<div class='vs'><img src='./letters/smallv.jpg'/><br/>";
-        echo "<img src='./letters/s.jpg' /></div>";
+        echo "<div class='vs'><img src='./letters/vs.jpg'/></div>";
         echo "<image class='baby' id='img2' onclick='voted(event)' src='$image2' width='300'/>";
         
         ?>
