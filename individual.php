@@ -39,7 +39,7 @@
     mysql_close();
         
     echo "<img id='6' src='./pics/$image1' /><br/>";
-    echo "<a href='./ind_vote?id=" . $id . "'>Vote For Me!</a>";
+    echo "<a href='./ind_vote.php?id=" . $id . "'>Vote For Me!</a>";
     ?>
     
 </section>

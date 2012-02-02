@@ -46,7 +46,7 @@ if(move_uploaded_file($_FILES['pic']['tmp_name'], $real_path)) {
     echo "There was an error uploading the file, please try again!<br/>";
 }
 
-echo "You can reach this baby's individual page at: http://baby-vote.com/individual?id=" . $id . "<br/>";
+echo "You can reach this baby's individual page at: http://baby-war.99k.org/individual.php?id=" . $id . "<br/>";
 
 echo "<p>All Done!</p>";
 
