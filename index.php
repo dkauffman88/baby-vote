@@ -68,7 +68,7 @@ function voted(event){
 
 <body>
 <header>
-<img alt="BABY-VOTE" src="../letters/header.jpg" />
+<img alt="BABY-VOTE" src="./letters/header.jpg" />
 </header>
 
 <nav>
