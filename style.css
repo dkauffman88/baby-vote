@@ -82,4 +82,14 @@ footer a{
     color: rgb(52,202,186);
 }
     
-    
+section.personal{
+    text-align: center;
+}
+
+section.personal img{
+    box-shadow: 8px 8px 5px #888;
+    padding: 1px;
+    border: solid black thin;
+    margin: 20px auto;
+    max-width: 700px;
+}

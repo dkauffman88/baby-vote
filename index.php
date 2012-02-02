@@ -28,8 +28,8 @@ function voted(event){
 	    	var l_election_count = response.split("@@")[5];
 	    	
 	    	// Set new images
-	    	document.getElementById('img1').src = img1;
-	    	document.getElementById('img2').src = img2;
+	    	document.getElementById('img1').src = "./pics/" + img1;
+	    	document.getElementById('img2').src = "./pics/" + img2;
 	    	
 	    	// Set winner
 	    	document.getElementById('winner_votes').innerHTML = "Votes : " + w_vote_count;
@@ -56,7 +56,8 @@ function voted(event){
 
     document.getElementById('winner').src = winner;
     document.getElementById('loser').src = loser;
-	var query = "?winner=" + winner + "&loser=" + loser;
+    // Probably not the best solution dawg
+	var query = "?winner=" + winner.split("/")[1] + "&loser=" + loser.split("/")[1];
 	ajaxRequest.open("GET", "vote.php" + query, true);
 	ajaxRequest.send(null);
 
@@ -119,9 +120,9 @@ function voted(event){
         }
         mysql_close();
         
-        echo "<image class='baby' id='img1' onclick='voted(event)' src='$image1' width='300'/>";
+        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='300'/>";
         echo "<div class='vs'><img src='./letters/vs.jpg'/></div>";
-        echo "<image class='baby' id='img2' onclick='voted(event)' src='$image2' width='300'/>";
+        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='300'/>";
         
         ?>
         
