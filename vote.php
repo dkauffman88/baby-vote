@@ -4,7 +4,7 @@
 $user="642393_ed";
 $password="williamandmary";
 //$database="baby-war_99k_pic";
-$database="babywar_99k_pic";
+$database="baby-war_99k_pic";
 
 mysql_connect("localhost",$user,$password);
 @mysql_select_db($database) or die( "Unable to select database");

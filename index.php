@@ -109,8 +109,7 @@ function voted(event){
         // Database stuff
         $user="642393_ed";
         $password="williamandmary";
-        //$database="baby-war_99k_pic";
-        $database="babywar_99k_pic";
+        $database="baby-war_99k_pic";
 
         mysql_connect("localhost",$user,$password);
         @mysql_select_db($database) or die( "Unable to select database");
@@ -132,6 +131,7 @@ function voted(event){
         echo "<div class='vs'><img src='./letters/smallv.jpg'/><br/>";
         echo "<img src='./letters/s.jpg' /></div>";
         echo "<image class='baby' id='img2' onclick='voted(event)' src='$image2' width='300'/>";
+        
         ?>
         
     </div>

@@ -1,0 +1,7 @@
+CREATE TABLE babys (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(id),
+    path varchar(1000) NOT NULL,
+    votes INT DEFAULT 0,
+    elections INT DEFAULT 0
+)
