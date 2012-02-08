@@ -12,7 +12,7 @@
 //File Copy Stuff
 // This is the tmp name.  I use this to insert into the DB to get the ID of this file
 $target_path = basename( $_FILES['pic']['name']);
-$title = $_POST['title'];
+//$title = $_POST['title'];
 
 // Database stuff
 $user="642393_ed";
