@@ -27,7 +27,7 @@ function voted(event){
 	    	var l_vote_count = response.split("@@")[4];
 	    	var l_election_count = response.split("@@")[5];
 	    	
-	    	// Set new images
+	    	// Set new images for election
 	    	document.getElementById('img1').src = "./pics/" + img1;
 	    	document.getElementById('img2').src = "./pics/" + img2;
 	    	
@@ -53,9 +53,18 @@ function voted(event){
 	else { var loser_id = 'img1'; }
 	var loser = document.getElementById(loser_id).src
 	loser = pathExtract.exec(loser)[1].slice(1);
-
+	
+	// Set winner / loser source and href
     document.getElementById('winner').src = winner;
     document.getElementById('loser').src = loser;
+    
+	var id1 = winner.match(/(\d+)$/)[1];
+    var id2 = loser.match(/(\d+)$/)[1];
+    
+	document.getElementById('link1').href = "http://baby-war.99k.org/individual.php?id=" + id1
+    document.getElementById('link2').href = "http://baby-war.99k.org/individual.php?id=" + id2
+    
+    
     // Probably not the best solution dawg
 	var query = "?winner=" + winner.split("/")[1] + "&loser=" + loser.split("/")[1];
 	ajaxRequest.open("GET", "vote.php" + query, true);
@@ -74,7 +83,10 @@ function voted(event){
 
 <nav>
 <a href="./index.php"><strong>Home</strong></a> | 
-<a href="./submit.html"><strong>Submit Baby Pictures</strong></a>
+<a href="./submit.html"><strong>Submit Baby Pictures</strong></a> |
+<a href="./coming.html"><strong>Beautiful Babies</strong></a> |
+<a href="./coming.html"><strong>Baby Products</strong></a> |
+<a href="./coming.html"><strong>About Baby Vote</strong></a>
 </nav>
 
 <!-- Content Begins Here -->
@@ -85,7 +97,7 @@ function voted(event){
             <hr/>
             <p id = 'winner_votes'></p>
             <p id = 'winner_percent'></p>
-            <img id = 'winner' src='' width='150px'/>
+            <a id='link1' href=''><img id = 'winner' src='' width='150px'/></a>
         </div>
         
         <div class="winner">
@@ -93,7 +105,7 @@ function voted(event){
             <hr/>
             <p id = 'loser_votes'></p>
             <p id = 'loser_percent'></p>
-            <img id = 'loser' src='' width='150px'/>
+            <a id='link2' href=''><img id = 'loser' src='' width='150px'/></a>
         </div>
     </div>
     
