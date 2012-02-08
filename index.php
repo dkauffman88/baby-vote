@@ -78,8 +78,8 @@ function voted(event){
 </nav>
 
 <!-- Content Begins Here -->
-<section class="vote">
-    <div>
+<section class="content">
+    <div id='leftbox'>
         <div class="winner"> <!-- Winner image from last election -->
             <p>Winner</p>
             <hr/>
@@ -121,11 +121,10 @@ function voted(event){
         mysql_close();
         
         echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='300'/>";
-        echo "<div class='vs'><img src='./letters/vs.jpg'/></div>";
+        echo "<div id='vs'><img src='./letters/vs.jpg'/></div>";
         echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='300'/>";
         
-        ?>
-        
+        ?>       
     </div>
     <br/>
     <br/>

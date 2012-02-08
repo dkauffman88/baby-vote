@@ -16,45 +16,60 @@ header{
 
 nav{
     text-align: center;
+    margin: 10px 0px;
 }
 
 nav a{
     color: rgb(52,202,186);
 }
 
-section.vote{
+section.content{
     margin: 0px auto;
-    padding: 10px;
     width: 940px;
-    overflow: auto;  
+    overflow: auto;
+    min-height: 500px;
 }
 
-section.vote *{
-    float: left;
+section.content .center{
+    text-align: center;
 }
 
-section.vote .winner{
+section.content .winner{
     width: 150px;
     text-align: center;
     border: solid black thin;
     padding: 1px;
-    margin: 0px 10px 20px 10px;
+    margin: 10px 10px 20px 10px;
     box-shadow: 8px 8px 5px #888;
     float: none;
 }
 
-section.vote div.election{
-    margin-left: 30px;
+section.content div.election{
+    margin-left: 10px;
+    overflow: auto;
+    float: left;
 }
 
-section.vote img.baby{
+section.content div.election *{
+    float: left;
+}
+
+section.content #leftbox{
+    float: left;
+}
+
+section.content .winner *{
+    float: none;
+}
+
+img.baby{
     border: solid black thin;
     box-shadow: 8px 8px 5px #888;
     padding: 1px;
-    margin: 0px 10px;
+    margin: 10px;
 }
 
-section.vote img.baby:hover{
+img.baby:hover{
     -moz-transform: scale(1.02);
     -moz-transition-duration: 100ms;
     -webkit-transform: scale(1.02);
@@ -65,12 +80,9 @@ section.vote img.baby:hover{
     -o-transition-duration: 100ms;
 }
 
-section.vote .winner *{
+section.content #vs *{
     float: none;
-}
-
-section.vote .vs *{
-    float: none;
+    margin-top: 10px;
 }
 
 footer{
@@ -80,16 +92,4 @@ footer{
 
 footer a{
     color: rgb(52,202,186);
-}
-    
-section.personal{
-    text-align: center;
-}
-
-section.personal img{
-    box-shadow: 8px 8px 5px #888;
-    padding: 1px;
-    border: solid black thin;
-    margin: 20px auto;
-    max-width: 700px;
 }

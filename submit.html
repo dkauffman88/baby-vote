@@ -22,12 +22,42 @@
 <a href="./submit.html"><strong>Submit Baby Pictures</strong></a>
 </nav>
 
-<br/>
-<br/>
-<p>Use the form below to submit your own baby images!</p><br/>
-<form enctype='multipart/form-data' method='post' action='./submit_image.php'>
-    Path : <input id='path' name='pic' type='file' />
-    <input type='submit' value='Submit'/>
-</form>
+<section class='content'>
+    <div class='center'>
+        <br/>
+        <br/>
+        <p>Use the form below to submit your own baby images!</p><br/>
+        <form enctype='multipart/form-data' method='post' action='./submit_image.php'>
+
+            <textarea name="terms and conditions" rows="22" cols="85" readonly="readonly">Disclaimer:
+            By submitting materials (including pictures) or other information to
+            Baby-Vote.com ("Baby Vote"), you grant Baby Vote a perpetual,
+            royalty-free license to use, reproduce, modify, publish, distribute,
+            and otherwise exercise all copyright and publicity rights with respect
+            to that information at its sole discretion. This includes storing
+            information or content received on Baby Votes servers and incorporating
+            it in other works in any media now known or later developed. If you do
+            not agree nor want Baby Vote to have these rights it is suggested that
+            you do not submit information or materials to this website. Baby Vote
+            reserves the right to delete, modify, remove, arrange submissions or
+            data at any point at its discretion without notice to the user. By
+            agreeing to the terms of this disclaimer, you are also acknowledging
+            that any photos you are submitting are owned by the you, the user. Baby
+            Vote is not liable for copy written works, or any consequential legal
+            damages resulting from their submission by our users. Any legal damages
+            arising from the submission of copy written works unlawfully will be
+            fully born by the user who submitted such work. Baby Vote does not
+            permit any nude images of babies or children on its website. Any nude
+            content submitted will be immediately removed and deleted. Baby Vote
+            reserves the right to report nude photos to the proper authorities.
+            </textarea><br/>
+            <br/>
+            Image Path : <input id='path' name='pic' type='file' /><br/>
+            <br/>
+            Image Title : <input name='title' /><br/>
+            <input type='submit' value='Submit'/>
+        </form>
+    </div>
+</section>
 
 </body></html>

@@ -19,7 +19,8 @@
 </nav>
 
 <!-- Content Begins Here -->
-<section class="personal">
+<section class="content">
+    <div class="center">
 
     <?php
     $id = $_GET["id"];
@@ -38,10 +39,11 @@
     $image1 = mysql_result($output, 0);
     mysql_close();
         
-    echo "<img id='6' src='./pics/$image1' /><br/>";
+    echo "<img class='baby' id='6' src='./pics/$image1' /><br/>";
     echo "<a href='./ind_vote.php?id=" . $id . "'>Vote For Me!</a>";
     ?>
     
+    </div>
 </section>
 <!-- Content Ends Here -->
 
