@@ -122,6 +122,11 @@ function voted(event){
         ?>       
     </div>
     
+    <div id='inst'>
+        <strong>Choose The Cutest Baby!</strong></span><br/>
+        <a id='draw' href="./index.php"><strong>Draw!</strong></a><br/>
+    </div>
+    
     <div id='result'>
         <div class="winner"> <!-- Winner image from last election -->
             <p>Winner</p>
@@ -145,8 +150,6 @@ function voted(event){
 <!-- Content Ends Here -->
 
 <footer>
-    <strong>Choose The Cutest Baby!</strong></span><br/>
-    <a id='draw' href="./index.php"><strong>Draw!</strong></a><br/>
       
     <g:plusone><!-- Place this render call where appropriate -->
     <script type="text/javascript">

@@ -2,7 +2,7 @@
 
 * {
 	padding: 0px;
-	margin: 0px;
+	margin: 5px 0px;
 }
 
 body{
@@ -79,6 +79,10 @@ img.baby:hover{
     -o-transition-duration: 100ms;
 }
 
+#inst {
+    text-align: center;
+}
+
 section.content #vs *{
     float: none;
     margin-top: 50px;
@@ -86,7 +90,7 @@ section.content #vs *{
 
 footer{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 footer a{

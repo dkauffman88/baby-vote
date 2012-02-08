@@ -1,11 +1,24 @@
 <html>
 
 <head>
-<!-- Stuff -->
+<link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
 </head>
 
 <body>
-    <h1> Well this worked... </h1>
+
+<header>
+<img alt="BABY-VOTE" src="./letters/header.jpg" />
+</header>
+
+<nav>
+<a href="./index.php"><strong>Home</strong></a> | 
+<a href="./submit.html"><strong>Submit Baby Pictures</strong></a> |
+<a href="./coming.html"><strong>Beautiful Babies</strong></a> |
+<a href="./coming.html"><strong>Baby Products</strong></a> |
+<a href="./coming.html"><strong>About Baby Vote</strong></a>
+</nav>
+
+<h1>Success!</h1>
 
 <?php
 
@@ -47,7 +60,7 @@ if(move_uploaded_file($_FILES['pic']['tmp_name'], $real_path)) {
     echo "There was an error uploading the file, please try again!<br/>";
 }
 
-echo "You can reach this baby's individual page at: http://baby-war.99k.org/individual.php?id=" . $id . "<br/>";
+echo "You can reach this baby's individual page at: <a href='http://baby-war.99k.org/individual.php?id=" . $id . "'>http://baby-war.99k.org/individual.php?id=" . $id . "<a/><br/>";
 
 echo "<p>All Done!</p>";
 

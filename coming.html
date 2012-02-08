@@ -24,27 +24,9 @@
 <!-- Content Begins Here -->
 <section class="content">
     <div class="center">
-
-    <?php
-    $id = $_GET["id"];
-    
-    // Database stuff
-    $user="642393_ed";
-    $password="williamandmary";
-    $database="baby-war_99k_pic";
-
-    mysql_connect("localhost",$user,$password);
-    @mysql_select_db($database) or die( "Unable to select database");
-
-    // Grab random image 1
-    $query = "SELECT path FROM babys WHERE id=$id;";
-    $output = mysql_query($query);
-    $image1 = mysql_result($output, 0);
-    mysql_close();
-        
-    echo "<img class='baby' id='6' src='./pics/$image1' /><br/>";
-    echo "<a href='./ind_vote.php?id=" . $id . "'>Vote For Me!</a>";
-    ?>
+    <br/>
+    <br/>
+    <h1>Coming Soon...</h1>
     
     </div>
 </section>
