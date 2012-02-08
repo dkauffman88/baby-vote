@@ -1,9 +1,10 @@
 <?php
 
 echo "banana\n";
-echo $argv[1] . $argv[0] . "\n";
 
 echo "something\n";
+
+$folder = $_GET['folder'];
 
 // Database stuff
 $user="642393_ed";
@@ -15,7 +16,7 @@ mysql_connect("localhost",$user,$password);
 @mysql_select_db($database) or die( "Unable to select database");
 
 //$dh = opendir($argv[1]);
-if ($dh = opendir($argv[1])){
+if ($dh = opendir($folder)){
     while (($file = readdir($dh)) !== false){
         echo "File: " . $file . "\n";
         if ($file != "." && $file != ".."){
@@ -35,7 +36,7 @@ if ($dh = opendir($argv[1])){
             mysql_query($query) or die ('Error updating file path with id');
             
             // Move the file to its real home.
-            if(copy($argv[1] . $file, $real_path)) {
+            if(copy($folder . $file, $real_path)) {
                 echo "The file " .  $file . " has been uploaded\n";
             } 
             else{
