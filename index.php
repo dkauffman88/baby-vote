@@ -91,23 +91,6 @@ function voted(event){
 
 <!-- Content Begins Here -->
 <section class="content">
-    <div id='leftbox'>
-        <div class="winner"> <!-- Winner image from last election -->
-            <p>Winner</p>
-            <hr/>
-            <p id = 'winner_votes'></p>
-            <p id = 'winner_percent'></p>
-            <a id='link1' href=''><img id = 'winner' src='' width='150px'/></a>
-        </div>
-        
-        <div class="winner">
-            <p>Loser</p>
-            <hr/>
-            <p id = 'loser_votes'></p>
-            <p id = 'loser_percent'></p>
-            <a id='link2' href=''><img id = 'loser' src='' width='150px'/></a>
-        </div>
-    </div>
     
     <div class="election">
         <?php
@@ -132,11 +115,29 @@ function voted(event){
         }
         mysql_close();
         
-        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='300'/>";
+        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='400'/>";
         echo "<div id='vs'><img src='./letters/vs.jpg'/></div>";
-        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='300'/>";
+        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='400'/>";
         
         ?>       
+    </div>
+    
+    <div id='result'>
+        <div class="winner"> <!-- Winner image from last election -->
+            <p>Winner</p>
+            <hr/>
+            <p id = 'winner_votes'></p>
+            <p id = 'winner_percent'></p>
+            <a id='link1' href=''><img id = 'winner' src='' width='100px'/></a>
+        </div>
+        
+        <div class="winner">
+            <p>Loser</p>
+            <hr/>
+            <p id = 'loser_votes'></p>
+            <p id = 'loser_percent'></p>
+            <a id='link2' href=''><img id = 'loser' src='' width='100px'/></a>
+        </div>
     </div>
     <br/>
     <br/>
