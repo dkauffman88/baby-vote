@@ -36,6 +36,7 @@ if ($dh = opendir($folder)){
             mysql_query($query) or die ('Error updating file path with id');
             
             // Move the file to its real home.
+            echo "Moving " . $folder . $file . " to " . $real_path . "<br/";
             if(copy($folder . $file, $real_path)) {
                 echo "The file " .  $file . " has been uploaded\n";
             } 
