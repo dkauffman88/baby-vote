@@ -19,7 +19,7 @@
 <nav>
 <a href="./index.php"><strong><span>Home</span></strong></a> | 
 <a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
-<a href="./beautiful.html"><strong><span>Beautiful Babies</span></strong></a> |
+<a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
 <a href="./coming.html"><strong><span>Baby Products</span></strong></a> |
 <a href="./coming.html"><strong><span>About Baby Vote</span></strong></a>
 </nav>
@@ -27,7 +27,6 @@
 <!-- Content Begins Here -->
 <section class="content">
     
-    <div class="election">
         <?php
         // Database stuff
         $user="642393_ed";
@@ -38,49 +37,20 @@
         @mysql_select_db($database) or die( "Unable to select database");
 
         // Grab random image 1
-        $query = "SELECT path FROM babys ORDER BY RAND();";
+        $query = "SELECT path, id FROM babys ORDER BY votes/elections DESC;";
         $output = mysql_query($query);
-        $image1 = mysql_result($output, 0);
         
-        $image2 = $image1;
-        while ($image2 == $image1)
-        {
-            $output = mysql_query($query);
-            $image2 = mysql_result($output, 0);
+        for ($i = 0; $i < 10; $i+=1){
+            $row = mysql_fetch_array($output, MYSQL_ASSOC);
+            $path = $row['path'];
+            $id = $row['id'];
+            $j = $i + 1;
+            echo "<h1>$j</h1><a href='http://baby-war.99k.org/individual.php?id=$id'><image class='baby' id='$i' src='./pics/$path'/></a><br/><br/><br/>\n";
         }
+        
+
         mysql_close();
-        
-        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='400'/>";
-        echo "<div id='vs'><img src='./letters/vs.jpg'/></div>";
-        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='400'/>";
-        
         ?>       
-    </div>
-    
-    <div id='inst'>
-        <strong>Choose The Cutest Baby!</strong></span><br/>
-        <a id='draw' href="./index.php"><strong>Draw!</strong></a><br/>
-    </div>
-    
-    <div id='result'>
-        <div class="winner"> <!-- Winner image from last election -->
-            <p>Winner</p>
-            <hr/>
-            <p id = 'winner_votes'></p>
-            <p id = 'winner_percent'></p>
-            <a id='link1' href=''><img id = 'winner' src='' width='100px'/></a>
-        </div>
-        
-        <div class="winner">
-            <p>Loser</p>
-            <hr/>
-            <p id = 'loser_votes'></p>
-            <p id = 'loser_percent'></p>
-            <a id='link2' href=''><img id = 'loser' src='' width='100px'/></a>
-        </div>
-    </div>
-    <br/>
-    <br/>
 </section>
 <!-- Content Ends Here -->
 
