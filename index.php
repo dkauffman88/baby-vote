@@ -84,9 +84,9 @@ function voted(event){
 <nav>
 <a href="./index.php"><strong>Home</strong></a> | 
 <a href="./submit.html"><strong>Submit Baby Pictures</strong></a> |
-<a href="./coming.html"><strong>Beautiful Babies</strong></a> |
+<a href="./beautiful.html"><strong>Beautiful Babies</strong></a> |
 <a href="./coming.html"><strong>Baby Products</strong></a> |
-<a href="./coming.html"><strong>About Baby Vote</strong></a>
+<a href="./about.html"><strong>About Baby Vote</strong></a>
 </nav>
 
 <!-- Content Begins Here -->
