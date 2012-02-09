@@ -6,72 +6,7 @@
     <META name="keywords" content="baby,baby war,babies,best,cute,cutest,cuter,choose,cute baby,cute babies,smiling babies,smiling baby,happy baby" />
     <title>Baby War - Vote for the cutest baby!</title>
     <link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
-    
-    <script type=text/javascript>
 
-function voted(event){
-
-    // Ajax stuff
-	var ajaxRequest = new XMLHttpRequest;  // The variable that makes Ajax possible!
-	
-	ajaxRequest.onreadystatechange = function(){
-	    if(ajaxRequest.readyState == 4){
-	    	//document.getElementById('winner').appendChild(ajaxRequest.responseText);
-	    	var response = ajaxRequest.responseText;
-	    	
-	    	// Get everything
-	    	var img1 = response.split("@@")[0];
-	    	var img2 = response.split("@@")[1];
-	    	var w_vote_count = response.split("@@")[2];
-	    	var w_election_count = response.split("@@")[3];
-	    	var l_vote_count = response.split("@@")[4];
-	    	var l_election_count = response.split("@@")[5];
-	    	
-	    	// Set new images for election
-	    	document.getElementById('img1').src = "./pics/" + img1;
-	    	document.getElementById('img2').src = "./pics/" + img2;
-	    	
-	    	// Set winner
-	    	document.getElementById('winner_votes').innerHTML = "Votes : " + w_vote_count;
-	    	var percent = Math.round((w_vote_count / w_election_count) * 100);
-	    	document.getElementById('winner_percent').innerHTML = "Win Rate : " + percent + "%";
-	    	
-	    	// Set loser
-	    	document.getElementById('loser_votes').innerHTML = "Votes : " + l_vote_count;
-	    	var percent = Math.round((l_vote_count / l_election_count) * 100);
-	    	document.getElementById('loser_percent').innerHTML = "Win Rate : " + percent + "%";
-	    }
-    }	
-	
-	// Winner
-	// Just some regex no big deal really
-	var pathExtract = /^[a-z]+:\/\/\/?[^\/]+(\/[^?]*)/i;
-	var winner = (pathExtract.exec(event.target.src))[1].slice(1);
-	
-	// Loser
-	if (event.target.id === 'img1')	{ var loser_id = 'img2'; }
-	else { var loser_id = 'img1'; }
-	var loser = document.getElementById(loser_id).src
-	loser = pathExtract.exec(loser)[1].slice(1);
-	
-	// Set winner / loser source and href
-    document.getElementById('winner').src = winner;
-    document.getElementById('loser').src = loser;
-    
-	var id1 = winner.match(/(\d+)$/)[1];
-    var id2 = loser.match(/(\d+)$/)[1];
-    
-	document.getElementById('link1').href = "http://baby-war.99k.org/individual.php?id=" + id1
-    document.getElementById('link2').href = "http://baby-war.99k.org/individual.php?id=" + id2
-    
-    
-    // Probably not the best solution dawg
-	var query = "?winner=" + winner.split("/")[1] + "&loser=" + loser.split("/")[1];
-	ajaxRequest.open("GET", "vote.php" + query, true);
-	ajaxRequest.send(null);
-
-}
-    </script>  
 </head>
 
 <!-- Head ends / Body begins -->

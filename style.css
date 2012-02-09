@@ -24,6 +24,10 @@ nav a{
     color: rgb(52,202,186);
 }
 
+nav a span{
+    color: #953ED0;
+}
+
 section.content{
     margin: 0px auto;
     width: 940px;
