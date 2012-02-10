@@ -1,4 +1,4 @@
-/* Style sheet for baby-vote.com */
+﻿/* Style sheet for baby-vote.com */
 
 * {
 	padding: 0px;
@@ -6,9 +6,9 @@
 }
 
 body{
-    width: 980px;
-    margin: 0px auto;
-    color: rgb(149,62,208);
+				width: 980px;
+				margin: 0px auto;
+				color: rgb(28, 112, 103);
 }
 
 header{
@@ -37,6 +37,11 @@ section.content{
 
 section.content .center{
     text-align: center;
+}
+
+section.content .green{
+    text-align: center;
+    color: #1c7067;
 }
 
 section.content .winner{

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html> 
 <head>
     <META http-equiv="baby-vote" content="text/html; charset=utf-8"/>
@@ -72,6 +72,36 @@ function voted(event){
 
 }
     </script>  
+	<style type="text/css">
+.style1 {
+				font-size: 16pt;
+}
+.style2 {
+				font-size: medium;
+				color: #1C7067;
+}
+.style3 {
+				font-size: 16pt;
+				color: #1C7067;
+}
+</style>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28103929-1']);
+  _gaq.push(['_setDomainName', 'baby-vote.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </head>
 
 <!-- Head ends / Body begins -->
@@ -83,13 +113,23 @@ function voted(event){
 
 <nav>
 <a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
+<a href="./submit.html"><strong><span class="style2">Submit Your Baby Pictures</span></strong></a> |
 <a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./coming.html"><strong><span>Baby Products</span></strong></a> |
-<a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
+<a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
+<a href="./about.html"><strong><span>About Baby Vote</span></strong></a> 
+<br>
+<br>
+<a href="http://www.wfp.org/"><strong><span class="style3">For each vote you cast, we donate 5 grains of rice to the World Food Programme. Help end world hunger. </span></strong></a>
 </nav>
 
+<span class="style1">
+
+<strong>
+
 <!-- Content Begins Here -->
+</strong>
+</a>
+</span>
 <section class="content">
     
     <div class="election">
@@ -115,32 +155,51 @@ function voted(event){
         }
         mysql_close();
         
-        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='400'/>";
+        echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' height='300px' width='400'/>";
         echo "<div id='vs'><img src='./letters/vs.jpg'/><br/><a id='draw' href='./index.php'><strong>Draw!</strong></a></div>";
-        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='400'/>";
+        echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' height='300px' width='400'/>";
         
         ?>       
     </div>
-    
-    <div id='result'>
-        <div class="winner"> <!-- Winner image from last election -->
-            <p>Winner</p>
-            <hr/>
-            <p id = 'winner_votes'></p>
-            <p id = 'winner_percent'></p>
-            <a id='link1' href=''><img id = 'winner' src='' width='100px'/></a>
-        </div>
-        
-        <div class="winner">
-            <p>Loser</p>
-            <hr/>
-            <p id = 'loser_votes'></p>
-            <p id = 'loser_percent'></p>
-            <a id='link2' href=''><img id = 'loser' src='' width='100px'/></a>
-        </div>
-    </div>
-    <br/>
-    <br/>
+				    <table style="width: 100%">
+				<tr>
+								<td>
+									<div id='result'>
+								        <div class="winner"> <!-- Winner image from last election -->
+								            <p>Winner</p>
+								            <hr/>
+								            <p id = 'winner_votes'></p>
+								            <p id = 'winner_percent'></p>
+								            <a id='link1' href=''><img id = 'winner' src='' height='75px' width='100px'/></a>
+								        </div>
+								        
+								        <div class="winner">
+								            <p>Loser</p>
+								            <hr/>
+								            <p id = 'loser_votes'></p>
+								            <p id = 'loser_percent'></p>
+								            <a id='link2' href=''><img id = 'loser' src='' height='75px' width='100px'/></a>
+								        </div>
+								    </div>
+
+								</td>
+								<td>
+												<script type='text/javascript'>
+												var amzn_wdgt={widget:'Carousel'};
+												amzn_wdgt.tag='babyvote-20';
+												amzn_wdgt.widgetType='Bestsellers';
+												amzn_wdgt.searchIndex='Baby';
+												amzn_wdgt.browseNode='165796011';
+												amzn_wdgt.title='';
+												amzn_wdgt.width='600';
+												amzn_wdgt.height='200';
+												amzn_wdgt.marketPlace='US';
+												</script>
+												<script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js'>
+												</script>
+								</td>
+				</tr>
+</table>
 </section>
 <!-- Content Ends Here -->
 

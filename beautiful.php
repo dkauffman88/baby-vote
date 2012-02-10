@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html> 
 <head>
     <META http-equiv="baby-vote" content="text/html; charset=utf-8"/>
@@ -7,6 +7,27 @@
     <title>Baby War - Vote for the cutest baby!</title>
     <link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28103929-1']);
+  _gaq.push(['_setDomainName', 'baby-vote.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	<style type="text/css">
+.style1 {
+				font-size: medium;
+				color: #1C7067;
+}
+</style>
 </head>
 
 <!-- Head ends / Body begins -->
@@ -18,9 +39,9 @@
 
 <nav>
 <a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
+<a href="./submit.html"><strong><span class="style1">Submit Baby Pictures</span></strong></a> |
 <a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./coming.html"><strong><span>Baby Products</span></strong></a> |
+<a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
 <a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
 </nav>
 
@@ -37,7 +58,7 @@
         @mysql_select_db($database) or die( "Unable to select database");
 
         // Grab random image 1
-        $query = "SELECT path, id FROM babys ORDER BY votes/elections DESC;";
+        $query = "SELECT path, id FROM babys ORDER BY votes DESC;";
         $output = mysql_query($query);
         
         for ($i = 0; $i < 10; $i+=1){
