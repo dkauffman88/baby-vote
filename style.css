@@ -6,9 +6,9 @@
 }
 
 body{
-				width: 980px;
-				margin: 0px auto;
-				color: rgb(28, 112, 103);
+    width: 980px;
+	margin: 0px auto;
+	color: rgb(28, 112, 103);
 }
 
 header{
@@ -96,6 +96,14 @@ section.content #vs *{
     float: none;
     margin-top: 50px;
 }
+
+section.banner{
+    color: #1C7067;
+    font-size: large;
+    text-align: center;
+    margin: 20px 0px;
+}
+
 
 footer{
     text-align: center;

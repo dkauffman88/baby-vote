@@ -71,21 +71,9 @@ function voted(event){
 	ajaxRequest.send(null);
 
 }
-    </script>  
-	<style type="text/css">
-.style1 {
-				font-size: 16pt;
-}
-.style2 {
-				font-size: medium;
-				color: #1C7067;
-}
-.style3 {
-				font-size: 16pt;
-				color: #1C7067;
-}
-</style>
+</script>
 
+<!-- Google Analytics -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -113,23 +101,18 @@ function voted(event){
 
 <nav>
 <a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span class="style2">Submit Your Baby Pictures</span></strong></a> |
+<a href="./submit.html"><strong><span>Submit Your Baby Pictures</span></strong></a> |
 <a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
 <a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
 <a href="./about.html"><strong><span>About Baby Vote</span></strong></a> 
-<br>
-<br>
-<a href="http://www.wfp.org/"><strong><span class="style3">For each vote you cast, we donate 5 grains of rice to the World Food Programme. Help end world hunger. </span></strong></a>
 </nav>
 
-<span class="style1">
-
-<strong>
+<section class='banner'>
+    <p>For each vote you cast, we donate 5 grains of rice to the <a href="http://www.wfp.org/">World Food Programme</a>. Help end world hunger.</p>
+</section>
 
 <!-- Content Begins Here -->
-</strong>
-</a>
-</span>
+
 <section class="content">
     
     <div class="election">
