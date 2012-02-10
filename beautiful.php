@@ -22,12 +22,6 @@
   })();
 
 </script>
-	<style type="text/css">
-.style1 {
-				font-size: medium;
-				color: #1C7067;
-}
-</style>
 </head>
 
 <!-- Head ends / Body begins -->
@@ -39,7 +33,7 @@
 
 <nav>
 <a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span class="style1">Submit Baby Pictures</span></strong></a> |
+<a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
 <a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
 <a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
 <a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
@@ -60,11 +54,15 @@
         // Grab random image 1
         $query = "SELECT path, id FROM babys ORDER BY votes DESC;";
         $output = mysql_query($query);
-        
-        for ($i = 0; $i < 10; $i+=1){
+        $images = Array(10);
+        for ($i = 0; $i < 10; $i+=1){ // Get items from db
             $row = mysql_fetch_array($output, MYSQL_ASSOC);
-            $path = $row['path'];
-            $id = $row['id'];
+            $images[$i] = $row;
+        }
+        
+        for ($i = 9; $i >= 0; $i-=1){ // Arrange them in reverse order
+            $path = $images[$i]['path'];
+            $id = $images[$i]['id'];
             $j = $i + 1;
             echo "<h1>$j</h1><a href='http://baby-war.99k.org/individual.php?id=$id'><image class='baby' id='$i' src='./pics/$path'/></a><br/><br/><br/>\n";
         }
