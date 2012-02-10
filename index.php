@@ -116,15 +116,10 @@ function voted(event){
         mysql_close();
         
         echo "<image class='baby' id='img1' onclick='voted(event)' src='./pics/$image1' width='400'/>";
-        echo "<div id='vs'><img src='./letters/vs.jpg'/></div>";<!-- Can we add the draw button here? does the draw button add votes? --> 
+        echo "<div id='vs'><img src='./letters/vs.jpg'/><br/><a id='draw' href='./index.php'><strong>Draw!</strong></a></div>";
         echo "<image class='baby' id='img2' onclick='voted(event)' src='./pics/$image2' width='400'/>";
         
         ?>       
-    </div>
-    
-    <div id='inst'>
-        </span><br/>
-        <a id='draw' href="./index.php"><strong>Draw!</strong></a><br/>
     </div>
     
     <div id='result'>
