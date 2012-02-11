@@ -104,6 +104,13 @@ section.banner{
     margin: 20px 0px;
 }
 
+p.medium{
+    text-align: justify;
+    line-height: 150%;
+    width: 500px;
+    margin: 20px auto;
+}
+
 
 footer{
     text-align: center;
