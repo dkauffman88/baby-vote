@@ -53,8 +53,13 @@ while ($image2 == $image1)
     $output = mysql_query($query);
     $image2 = mysql_result($output, 0);
 }
+
+
+// New vote count
+$query = "SELECT SUM(votes) FROM babys;";
+$total_votes = mysql_result(mysql_query($query), 0);
 mysql_close();
 
-echo $image1 . '@@' . $image2 . '@@' . $w_vote_count . '@@' . $w_election_count . '@@' . $l_vote_count . '@@' . $l_election_count;
+echo $image1 . '@@' . $image2 . '@@' . $w_vote_count . '@@' . $w_election_count . '@@' . $l_vote_count . '@@' . $l_election_count . '@@' . $total_votes;
 
 ?>

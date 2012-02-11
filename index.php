@@ -26,6 +26,7 @@ function voted(event){
 	    	var w_election_count = response.split("@@")[3];
 	    	var l_vote_count = response.split("@@")[4];
 	    	var l_election_count = response.split("@@")[5];
+	    	var total_votes = response.split("@@")[6];
 	    	
 	    	// Set new images for election
 	    	document.getElementById('img1').src = "./pics/" + img1;
@@ -40,6 +41,10 @@ function voted(event){
 	    	document.getElementById('loser_votes').innerHTML = "Votes : " + l_vote_count;
 	    	var percent = Math.round((l_vote_count / l_election_count) * 100);
 	    	document.getElementById('loser_percent').innerHTML = "Win Rate : " + percent + "%";
+	    	
+	    	// Set votes
+	    	document.getElementById('votes').innerHTML = total_votes * 5;	    	
+	    	
 	    }
     }	
 	
@@ -110,10 +115,8 @@ function voted(event){
 <section class='banner'>
     <p>For each vote you cast, we donate 5 grains of rice to the <a href="http://www.wfp.org/">World Food Programme</a>. Help end world hunger.</p>
     <?php
-    // Database stuff
-    $user="642393_ed";
-    $password="williamandmary";
-    $database="baby-war_99k_pic";
+    
+    include 'db_pass.php';
     
     mysql_connect("localhost",$user,$password);
     @mysql_select_db($database) or die( "Unable to select database");
@@ -123,7 +126,7 @@ function voted(event){
     $output = mysql_query($query);
     $total_votes = mysql_result($output, 0);
     $total_votes = $total_votes * 5;
-    echo "<p>$total_votes grains earned so far!</p>";
+    echo "<p><span id='votes'>$total_votes</span> grains earned so far!</p>";
         
     ?>
         
