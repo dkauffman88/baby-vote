@@ -109,6 +109,24 @@ function voted(event){
 
 <section class='banner'>
     <p>For each vote you cast, we donate 5 grains of rice to the <a href="http://www.wfp.org/">World Food Programme</a>. Help end world hunger.</p>
+    <?php
+    // Database stuff
+    $user="642393_ed";
+    $password="williamandmary";
+    $database="baby-war_99k_pic";
+    
+    mysql_connect("localhost",$user,$password);
+    @mysql_select_db($database) or die( "Unable to select database");
+
+    // Grab vote count
+    $query = "SELECT SUM(votes) FROM babys;";
+    $output = mysql_query($query);
+    $total_votes = mysql_result($output, 0);
+    $total_votes = $total_votes * 5;
+    echo "<p>$total_votes grains earned so far!</p>";
+        
+    ?>
+        
 </section>
 
 <!-- Content Begins Here -->
@@ -144,45 +162,25 @@ function voted(event){
         
         ?>       
     </div>
-				    <table style="width: 100%">
-				<tr>
-								<td>
-									<div id='result'>
-								        <div class="winner"> <!-- Winner image from last election -->
-								            <p>Winner</p>
-								            <hr/>
-								            <p id = 'winner_votes'></p>
-								            <p id = 'winner_percent'></p>
-								            <a id='link1' href=''><img id = 'winner' src='' height='75px' width='100px'/></a>
-								        </div>
-								        
-								        <div class="winner">
-								            <p>Loser</p>
-								            <hr/>
-								            <p id = 'loser_votes'></p>
-								            <p id = 'loser_percent'></p>
-								            <a id='link2' href=''><img id = 'loser' src='' height='75px' width='100px'/></a>
-								        </div>
-								    </div>
 
-								</td>
-								<td>
-												<script type='text/javascript'>
-												var amzn_wdgt={widget:'Carousel'};
-												amzn_wdgt.tag='babyvote-20';
-												amzn_wdgt.widgetType='Bestsellers';
-												amzn_wdgt.searchIndex='Baby';
-												amzn_wdgt.browseNode='165796011';
-												amzn_wdgt.title='';
-												amzn_wdgt.width='600';
-												amzn_wdgt.height='200';
-												amzn_wdgt.marketPlace='US';
-												</script>
-												<script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js'>
-												</script>
-								</td>
-				</tr>
-</table>
+    <div id='result'>
+        <div class="winner"> <!-- Winner image from last election -->
+            <p>Winner</p>
+            <hr/>
+            <p id = 'winner_votes'></p>
+            <p id = 'winner_percent'></p>
+            <a id='link1' href=''><img id = 'winner' src='' height='75px' width='100px'/></a>
+        </div>
+								        
+        <div class="winner">
+            <p>Loser</p>
+            <hr/>
+            <p id = 'loser_votes'></p>
+            <p id = 'loser_percent'></p>
+            <a id='link2' href=''><img id = 'loser' src='' height='75px' width='100px'/></a>
+        </div>
+    </div>
+
 </section>
 <!-- Content Ends Here -->
 
