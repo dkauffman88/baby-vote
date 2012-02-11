@@ -1,2 +1,5 @@
 # This is where the pictures are storedy
 pics/
+
+# This is to keep the db passwords off github
+db_pass.php

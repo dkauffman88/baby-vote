@@ -28,10 +28,7 @@ $target_path = basename( $_FILES['pic']['name']);
 //$title = $_POST['title'];
 
 // Database stuff
-$user="642393_ed";
-$password="williamandmary";
-//$database="baby-war_99k_pic";
-$database="baby-war_99k_pic";
+include 'db_pass.php';
 
 mysql_connect("localhost",$user,$password);
 @mysql_select_db($database) or die( "Unable to select database");

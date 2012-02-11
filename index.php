@@ -125,6 +125,8 @@ function voted(event){
     $query = "SELECT SUM(votes) FROM babys;";
     $output = mysql_query($query);
     $total_votes = mysql_result($output, 0);
+    mysql_close();
+    
     $total_votes = $total_votes * 5;
     echo "<p><span id='votes'>$total_votes</span> grains earned so far!</p>";
         
@@ -138,10 +140,8 @@ function voted(event){
     
     <div class="election">
         <?php
-        // Database stuff
-        $user="642393_ed";
-        $password="williamandmary";
-        $database="baby-war_99k_pic";
+        
+        include 'db_pass.php';
 
         mysql_connect("localhost",$user,$password);
         @mysql_select_db($database) or die( "Unable to select database");
