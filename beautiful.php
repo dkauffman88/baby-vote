@@ -50,7 +50,7 @@
         @mysql_select_db($database) or die( "Unable to select database");
 
         // Grab random image 1
-        $query = "SELECT path, id FROM babys ORDER BY votes DESC;";
+        $query = "SELECT path, id, votes FROM babys ORDER BY votes DESC;";
         $output = mysql_query($query);
         $images = Array(10);
         for ($i = 0; $i < 10; $i+=1){ // Get items from db
@@ -61,8 +61,9 @@
         for ($i = 9; $i >= 0; $i-=1){ // Arrange them in reverse order
             $path = $images[$i]['path'];
             $id = $images[$i]['id'];
+            $votes = $images[$i]['votes'];
             $j = $i + 1;
-            echo "<h1>$j</h1><a href='http://baby-war.99k.org/individual.php?id=$id'><image class='baby' id='$i' src='./pics/$path'/></a><br/><br/><br/>\n";
+            echo "<p class='title'>#$j</p><p class='value'>$votes votes</p><br/><a href='http://baby-war.99k.org/individual.php?id=$id'><image class='baby' id='$i' src='./pics/$path'/></a><br/><br/><br/>\n";
         }
         
 

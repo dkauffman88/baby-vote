@@ -111,6 +111,17 @@ p.medium{
     margin: 20px auto;
 }
 
+p.title{
+    font-size: 200%;
+    display: inline;
+    font-weight: bold;
+}
+
+p.value{
+    display: inline;
+    margin: 0px 20px;
+}
+
 
 footer{
     text-align: center;
