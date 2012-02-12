@@ -21,11 +21,11 @@ nav{
 }
 
 nav a{
-    color: rgb(52,202,186);
+    color: rgb(52,202,186); /* Green */
 }
 
 nav a span{
-    color: #953ED0;
+    color: #953ED0; /* Purple */
 }
 
 section.content{
@@ -127,6 +127,10 @@ p.value{
 form{
     margin: 0px auto;
     width: 700px;
+}
+
+span#votes{
+    color: #953ED0; /* Purple */
 }
 
 footer{
