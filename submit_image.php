@@ -15,7 +15,7 @@ include 'header.php';
 <?php
 
 require_once('recaptchalib.php'); // Captcha stuff
-$privatekey = "6Lcej80SAAAAAOeGa1tdnSG69Z1dwAPq_cECFp36";
+$privatekey = "6Ldhkc0SAAAAAH827ocyF6TdaASGqjf0lKhuVQbO ";
 $resp = recaptcha_check_answer ($privatekey,
                             $_SERVER["REMOTE_ADDR"],
                             $_POST["recaptcha_challenge_field"],

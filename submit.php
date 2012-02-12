@@ -53,7 +53,7 @@ include 'header.php';
         <p>We recommend uploading images that are 300 x 400 pixels or 3:4 aspect ratio for best results.</p>
         <?php
         require_once('recaptchalib.php');
-        $publickey = "6Lcej80SAAAAAEqCYHfEO3jqKtNXvyk8rxrKl_lv "; // you got this from the signup page
+        $publickey = "6Ldhkc0SAAAAAEh7XaYtPJSVHTpC2B-nh4wSic8I"; // you got this from the signup page
         echo recaptcha_get_html($publickey);
         ?>
         <span class="big">Image Path :&nbsp;&nbsp; </span>
