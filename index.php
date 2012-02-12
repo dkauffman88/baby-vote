@@ -99,44 +99,34 @@ function voted(event){
 
 <!-- Head ends / Body begins -->
 
-<body>
-<header>
-<img alt="BABY-VOTE" src="./letters/header.jpg" />
-</header>
-
-<nav>
-<a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span>Submit Your Baby Pictures</span></strong></a> |
-<a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./products.html"><strong><span>Baby Store</span></strong></a> |
-<a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
-</nav>
-
-<section class='banner'>
-    <p>For each vote you cast, we donate 5 grains of rice to the <a href="http://www.wfp.org/">World Food Programme</a>. Help end world hunger.</p>
-    <?php
-    
-    include 'db_pass.php';
-    
-    mysql_connect("localhost",$user,$password);
-    @mysql_select_db($database) or die( "Unable to select database");
-
-    // Grab vote count
-    $query = "SELECT SUM(votes) FROM babys;";
-    $output = mysql_query($query);
-    $total_votes = mysql_result($output, 0);
-    mysql_close();
-    
-    $total_votes = $total_votes * 5;
-    echo "<p><span id='votes'>$total_votes</span> grains earned so far!</p>";
-        
-    ?>
-        
-</section>
+<?php
+include 'header.php';
+?>
 
 <!-- Content Begins Here -->
 
 <section class="content">
+    <section class='banner'>
+        <p>For each vote you cast, we donate 5 grains of rice to the <a href="http://www.wfp.org/">World Food Programme</a>. Help end world hunger.</p>
+        <?php
+        
+        include 'db_pass.php';
+        
+        mysql_connect("localhost",$user,$password);
+        @mysql_select_db($database) or die( "Unable to select database");
+
+        // Grab vote count
+        $query = "SELECT SUM(votes) FROM babys;";
+        $output = mysql_query($query);
+        $total_votes = mysql_result($output, 0);
+        mysql_close();
+        
+        $total_votes = $total_votes * 5;
+        echo "<p><span id='votes'>$total_votes</span> grains earned so far!</p>";
+            
+        ?>
+            
+    </section>
     
     <div class="election">
         <?php
