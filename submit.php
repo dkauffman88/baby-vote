@@ -34,26 +34,13 @@
 </script>
 </head>
 
+<!-- Head ends / Body begins -->
 <body>
+<?php
+include 'header.php';
+?>
 
-<header>
-<img alt="BABY-VOTE" src="../letters/header.jpg" />
-</header>
-
-<nav>
-<a href="./index.php"><strong><span class="style1">Home</span></strong></a><span class="style1"> | 
-</span> 
-<a href="./submit.html"><strong><span class="style4">Submit Baby Pictures</span></strong></a><span class="style1"> |
-</span>
-<a href="./beautiful.php"><strong><span class="style1">Beautiful Babies</span></strong></a><span class="style1"> |
-</span>
-<a href="./products.html"><strong><span class="style1">Baby Shop</span></strong></a><span class="style1"> |
-</span>
-<a href="./about.html"><strong><span class="style1">About Baby Vote</span></strong></a><span class="style1">
-</span>
-</nav>
-
-
+<!-- Content Begins Here -->
 <section class='content'>
     <form enctype='multipart/form-data' method='post' action='./submit_image.php'>
         <div class='center'>

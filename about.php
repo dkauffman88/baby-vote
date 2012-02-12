@@ -36,24 +36,11 @@
 </head>
 
 <!-- Head ends / Body begins -->
-
 <body>
-<header>
-<img alt="BABY-VOTE" src="./letters/header.jpg" />
-</header>
-
-<nav>
-<a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span class="style3">Submit Baby Pictures</span></strong></a> |
-<a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
-<a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
-</nav>
-
-<span class="style1">
-
+<?php
+include 'header.php';
+?>
 <!-- Content Begins Here -->
-</span>
 <section class="content">
     <div class="center">
         <h1>About Us</h1>

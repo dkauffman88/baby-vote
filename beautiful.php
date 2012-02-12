@@ -25,19 +25,10 @@
 </head>
 
 <!-- Head ends / Body begins -->
-
 <body>
-<header>
-<img alt="BABY-VOTE" src="./letters/header.jpg" />
-</header>
-
-<nav>
-<a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
-<a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./products.html"><strong><span>Baby Shop</span></strong></a> |
-<a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
-</nav>
+<?php
+include 'header.php';
+?>
 
 <!-- Content Begins Here -->
 <section class="content">

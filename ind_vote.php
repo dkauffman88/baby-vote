@@ -7,19 +7,11 @@
 </head>
 
 <!-- Head ends / Body begins -->
-
 <body>
-<header>
-<img alt="BABY-VOTE" src="./letters/header.jpg" />
-</header>
+<?php
+include 'header.php';
+?>
 
-<nav>
-<a href="./index.php"><strong><span>Home</span></strong></a> | 
-<a href="./submit.html"><strong><span>Submit Baby Pictures</span></strong></a> |
-<a href="./beautiful.php"><strong><span>Beautiful Babies</span></strong></a> |
-<a href="./coming.html"><strong><span>Baby Products</span></strong></a> |
-<a href="./about.html"><strong><span>About Baby Vote</span></strong></a>
-</nav>
 <!-- Content Begins Here -->
 <section class="personal">
 

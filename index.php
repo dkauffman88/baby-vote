@@ -98,7 +98,7 @@ function voted(event){
 </head>
 
 <!-- Head ends / Body begins -->
-
+<body>
 <?php
 include 'header.php';
 ?>
