@@ -75,6 +75,8 @@ img.baby{
     box-shadow: 8px 8px 5px #888;
     padding: 1px;
     margin: 15px;
+    max-width: 900px;
+    
 }
 
 img.baby:hover{
@@ -122,6 +124,10 @@ p.value{
     margin: 0px 20px;
 }
 
+form{
+    margin: 0px auto;
+    width: 700px;
+}
 
 footer{
     text-align: center;

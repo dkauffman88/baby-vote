@@ -10,19 +10,11 @@
 
   
 	<style type="text/css">
-.style1 {
-				color: #953ED0;
-}
-.style2 {
-				color: #1C7067;
-}
-.style3 {
+
+.big {
 				font-size: large;
 }
-.style4 {
-				color: #1C7067;
-				font-size: medium;
-}
+
 </style>
 
 <script type="text/javascript">
@@ -63,16 +55,23 @@
 
 
 <section class='content'>
-    <div class='center'>
-        <p class="style2">Submit your baby pictures for a chance to win!</p>
-        <form enctype='multipart/form-data' method='post' action='./submit_image.php'>
+    <form enctype='multipart/form-data' method='post' action='./submit_image.php'>
+        <div class='center'>
+            <h3>Submit your baby pictures for a chance to win!</h3>
+            
             <textarea name="terms and conditions" rows="22" cols="85" readonly="readonly">Disclaimer:
             By submitting materials (including pictures) or other information to Baby-Vote.com ("Baby Vote"), you grant Baby Vote a perpetual, royalty-free license to use, reproduce, modify, publish, distribute, and otherwise exercise all copyright and publicity rights with respect to that information at its sole discretion. This includes storing information or content received on Baby Votes servers and incorporating it in other works in any media now known or later developed. If you do not agree nor want Baby Vote to have these rights it is suggested that you do not submit information or materials to this website. Baby Vote reserves the right to delete, modify, remove, arrange submissions or data at any point at its discretion without notice to the user. By agreeing to the terms of this disclaimer, you are also acknowledging that any photos you are submitting are owned by the you, the user. Baby Vote is not liable for copy written works, or any consequential legal damages resulting from their submission by our users. Any legal damages arising from the submission of copy written works unlawfully will be fully born by the user who submitted such work. Baby Vote does not permit any nude images of babies or children on its website. Any nude content submitted will be immediately removed and deleted. Baby Vote reserves the right to report nude photos to the proper authorities.            </textarea><br/>
-            </textarea><br/>
-            <br/>
-            <span class="style3">Image Path :&nbsp;&nbsp; </span> 
-    		<input id='path' name='pic' type='file' style="width: 386px; height: 34px; font-size: large" /><input type='submit' value='Submit' style="height: 34px; width: 107px; font-size: large;"/></form>
-    </div>
+            </textarea>
+        </div>
+        <p>We recommend uploading images that are 300 x 400 pixels or 3:4 aspect ratio for best results.</p>
+        <?php
+        require_once('recaptchalib.php');
+        $publickey = "6Lcej80SAAAAAEqCYHfEO3jqKtNXvyk8rxrKl_lv "; // you got this from the signup page
+        echo recaptcha_get_html($publickey);
+        ?>
+        <span class="big">Image Path :&nbsp;&nbsp; </span>
+		<input id='path' name='pic' type='file' style="width: 386px; height: 34px; font-size: large" /><input type='submit' value='Submit' style="height: 34px; width: 107px; font-size: large;"/>
+    </form>
 </section>
 
 </body></html>
