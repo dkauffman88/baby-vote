@@ -29,13 +29,19 @@ include 'header.php';
     @mysql_select_db($database) or die( "Unable to select database");
 
     // Grab random image 1
-    $query = "SELECT path FROM babys WHERE id=$id;";
+    $query = "SELECT path FROM babys WHERE id=$id AND live=1;";
     $output = mysql_query($query);
     $image1 = mysql_result($output, 0);
     mysql_close();
-        
-    echo "<img class='baby' src='./pics/$image1' /><br/>";
-    echo "<a href='./ind_vote.php?id=" . $id . "'>Vote For Me!</a>";
+    
+    if ($image1 == "" ){
+        echo "<h1>This image has not yet been reviewed</h1>";
+    }
+    
+    else{
+        echo "<img class='baby' src='./pics/$image1' /><br/>";
+        echo "<a href='./ind_vote.php?id=" . $id . "'>Vote For Me!</a>";
+    }
     ?>
     
     </div>

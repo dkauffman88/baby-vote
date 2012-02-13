@@ -141,7 +141,7 @@ include 'header.php';
         @mysql_select_db($database) or die( "Unable to select database");
 
         // Grab random image 1
-        $query = "SELECT path FROM babys ORDER BY RAND();";
+        $query = "SELECT path FROM babys WHERE live=1 ORDER BY RAND();";
         $output = mysql_query($query);
         $image1 = mysql_result($output, 0);
         

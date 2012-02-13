@@ -127,6 +127,11 @@ p.value{
 form{
     margin: 0px auto;
     width: 700px;
+    overflow: auto;
+}
+
+form *{
+    max-width: 600px;
 }
 
 span#votes{

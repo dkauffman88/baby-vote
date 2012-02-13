@@ -6,3 +6,6 @@ CREATE TABLE babys (
     votes INT DEFAULT 0,
     elections INT DEFAULT 0
 )
+
+ALTER TABLE babys ADD COLUMN live boolean DEFAULT false;
+

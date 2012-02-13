@@ -44,7 +44,7 @@ include 'header.php';
         @mysql_select_db($database) or die( "Unable to select database");
 
         // Grab random image 1
-        $query = "SELECT path, id, votes FROM babys ORDER BY votes DESC;";
+        $query = "SELECT path, id, votes FROM babys WHERE live=1 ORDER BY votes DESC;";
         $output = mysql_query($query);
         $images = Array(10);
         for ($i = 0; $i < 10; $i+=1){ // Get items from db
