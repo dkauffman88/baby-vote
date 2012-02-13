@@ -134,6 +134,11 @@ form *{
     max-width: 600px;
 }
 
+div.center{
+    text-align: center;
+    margin: 0px auto;
+}
+
 span#votes{
     color: #953ED0; /* Purple */
 }
