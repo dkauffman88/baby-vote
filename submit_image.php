@@ -17,6 +17,8 @@ include 'header.php';
 <section class='content'>
 <?php
 
+/*
+
 require_once('recaptchalib.php'); // Captcha stuff
 $privatekey = "6Ldhkc0SAAAAAH827ocyF6TdaASGqjf0lKhuVQbO ";
 $resp = recaptcha_check_answer ($privatekey,
@@ -28,7 +30,7 @@ if (!$resp->is_valid) {
 // What happens when the CAPTCHA was entered incorrectly
 die ("The reCAPTCHA wasn't entered correctly. Go back and try it again.");
 } else {
-
+*/
 
     //File Copy Stuff
     // This is the tmp name.  I use this to insert into the DB to get the ID of this file
@@ -79,7 +81,7 @@ die ("The reCAPTCHA wasn't entered correctly. Go back and try it again.");
         echo "This is not a valid image file<br/>";
     }
     echo "<p>All Done!  You can navigate elsewhere.</p>";
-}
+//}
 
 ?>
 </section>

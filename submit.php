@@ -54,11 +54,14 @@ include 'header.php';
             </textarea>
         </div>
         <p>We recommend uploading images that are 300 x 400 pixels or 3:4 aspect ratio for best results.</p>
+        
+        <!-- 
         <?php
         require_once('recaptchalib.php');
         $publickey = "6Ldhkc0SAAAAAEh7XaYtPJSVHTpC2B-nh4wSic8I"; // you got this from the signup page
         echo recaptcha_get_html($publickey);
         ?>
+        -->
         <span class="big">Image Path :&nbsp;&nbsp; </span>
 		<input id='path' name='pic' type='file' style="width: 386px; height: 34px; font-size: large" /><input type='submit' value='Submit' style="height: 34px; width: 107px; font-size: large;"/>
     </form>
