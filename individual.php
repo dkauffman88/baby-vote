@@ -31,7 +31,10 @@ include 'header.php';
     // Grab random image 1
     $query = "SELECT path FROM babys WHERE id=$id AND live=1;";
     $output = mysql_query($query);
-    $image1 = mysql_result($output, 0);
+
+    if ( mysql_num_rows($output) > 0 ){
+        $image1 = mysql_result($output, 0);
+    }
     mysql_close();
     
     if ($image1 == "" ){
