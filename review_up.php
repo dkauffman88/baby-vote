@@ -31,6 +31,7 @@ include 'header.php';
     mysql_close();
     
     echo "<h1>updated DB</h1>";
+    echo "<a href='http://baby-war.99k.org/review.php'>Review More</a>";
 
 ?>
 
