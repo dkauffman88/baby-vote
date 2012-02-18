@@ -1,3 +1,4 @@
+﻿<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -16,6 +17,8 @@ include 'header.php';
 <!-- Content Begins Here -->
 <section class='content'>
 <?php
+
+session_start();
 
 /*
 
@@ -49,8 +52,14 @@ die ("The reCAPTCHA wasn't entered correctly. Go back and try it again.");
         mysql_connect("localhost",$user,$password);
         @mysql_select_db($database) or die( "Unable to select database");
 
+        $currentUser = $_SESSION['username'];
+        
+        $query = "SELECT id FROM users WHERE username='$currentUser'";
+        $result = mysql_query($query);
+        $user_id = mysql_result($result, 0);
+        
         // Insert the file info into the table
-        $query = "INSERT INTO babys (path, votes) VALUES('$target_path', '0')";
+        $query = "INSERT INTO babys (path, votes, user) VALUES('$target_path', '0', '$user_id')";
         mysql_query($query) or die ('Error adding pic to database');
         $id = mysql_insert_id() or die ('Error getting the id');
 

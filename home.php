@@ -6,7 +6,7 @@
 	}
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>My Website - Protected Content</title>
@@ -28,7 +28,7 @@
 	<?php
 		if(!$_SESSION['loggedIn']) // If the user IS NOT logged in, forward them back to the login page
 		{
-			header("location:Login.html");
+			header("location:login.html");
 		}else{ // If the user IS logged in, then echo the page contents:
 			$currentUser = $_SESSION['username']; // Gets the username from the cookie we created in Check.php
 			$message = '<p>Welcome, ' . ucfirst($currentUser) . '!</p>'; // This compiles hello (your username)
