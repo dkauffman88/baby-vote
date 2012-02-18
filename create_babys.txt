@@ -8,4 +8,13 @@ CREATE TABLE babys (
 )
 
 ALTER TABLE babys ADD COLUMN live boolean DEFAULT false;
+ALTER TABLE babys ADD COLUMN user INT 
+ALTER TABLE babys ADD FOREIGN KEY (user) REFERENCES users(id)
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(id),
+    username varchar(25) NOT NULL,
+    password varchar(25) NOT NULL
+);
 
