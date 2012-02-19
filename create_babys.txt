@@ -1,3 +1,5 @@
+//Create the babys table
+
 CREATE TABLE babys (
     id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(id),
@@ -7,14 +9,18 @@ CREATE TABLE babys (
     elections INT DEFAULT 0
 )
 
+// Stuff that I've done that could be incorporated above
 ALTER TABLE babys ADD COLUMN live boolean DEFAULT false;
 ALTER TABLE babys ADD COLUMN user INT 
 ALTER TABLE babys ADD FOREIGN KEY (user) REFERENCES users(id)
 
+// Create the users table
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(id),
     username varchar(25) NOT NULL,
     password varchar(25) NOT NULL
 );
+
+
 

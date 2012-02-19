@@ -128,10 +128,17 @@ form{
     margin: 0px auto;
     width: 700px;
     overflow: auto;
+    text-align: center;
+    border: solid red thin;
 }
 
 form *{
     max-width: 600px;
+    margin: 5px auto;
+}
+
+form ol{
+    float: right;
 }
 
 div.center{

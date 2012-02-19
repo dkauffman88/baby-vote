@@ -18,8 +18,8 @@
 
 	if($count==1) // If there is a match..
 	{
-		$_SESSION["username"] = $username; // Creates a cookie saving the username
-		$_SESSION["loggedIn"] = true; // Creates a cookie saying the user is logged in
+		$_SESSION["username"] = $username; // Keeps this user logged in the the SESSION var
+		$_SESSION["loggedIn"] = true; // Lets us know somebody is logged in
 		header("Location:home.php");
 	}else{ // If invalid information was entered
 		header("Location:login.html"); // Lastly, redirect back to login page
