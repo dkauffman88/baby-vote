@@ -185,8 +185,8 @@ include 'header.php';
     amzn_wdgt.searchIndex='Baby';
     amzn_wdgt.browseNode='165796011';
     amzn_wdgt.title='';
-    amzn_wdgt.width='600';
-    amzn_wdgt.height='200';
+    amzn_wdgt.width='610';
+    amzn_wdgt.height='233';
     amzn_wdgt.marketPlace='US';
     </script>
     <script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js'>
