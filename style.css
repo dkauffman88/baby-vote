@@ -55,6 +55,16 @@ section.content .winner{
     font-size: 75%;
 }
 
+section.content .ad{
+	width: 634px; 
+	text-align: center; 
+	padding: 0px; 
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 0px; 
+	float: left; 
+}
+
 section.content div.election{
     overflow: auto;
     margin: 0px auto;
