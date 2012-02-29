@@ -160,7 +160,7 @@ include 'header.php';
         ?>       
     </div>
 
-    <div id='result'>
+    <div id='content'>
         <div class="winner"> <!-- Winner image from last election -->
             <p>Winner</p>
             <hr/>
@@ -168,7 +168,21 @@ include 'header.php';
             <p id = 'winner_percent'></p>
             <a id='link1' href=''><img id = 'winner' src='' height='75px' width='100px'/></a>
         </div>
-								        
+	<div class="ad">
+	    <script type='text/javascript'>
+    	    var amzn_wdgt={widget:'Carousel'};
+    	    amzn_wdgt.tag='babyvote-20';
+    	    amzn_wdgt.widgetType='Bestsellers';
+    	    amzn_wdgt.searchIndex='Baby';
+    	    amzn_wdgt.browseNode='165796011';
+    	    amzn_wdgt.title='';
+    	    amzn_wdgt.width='600';
+    	    amzn_wdgt.height='200';
+    	    amzn_wdgt.marketPlace='US';
+    	    </script>
+    	    <script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js'>
+    	    </script>
+	</div>				        
         <div class="winner">
             <p>Loser</p>
             <hr/>
@@ -178,20 +192,6 @@ include 'header.php';
         </div>
     </div>
     
-    <script type='text/javascript'>
-    var amzn_wdgt={widget:'Carousel'};
-    amzn_wdgt.tag='babyvote-20';
-    amzn_wdgt.widgetType='Bestsellers';
-    amzn_wdgt.searchIndex='Baby';
-    amzn_wdgt.browseNode='165796011';
-    amzn_wdgt.title='';
-    amzn_wdgt.width='600';
-    amzn_wdgt.height='200';
-    amzn_wdgt.marketPlace='US';
-    </script>
-    <script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/swfobject_1_5.js'>
-    </script>
-
 </section>
 <!-- Content Ends Here -->
 
