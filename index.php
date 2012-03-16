@@ -2,9 +2,9 @@
 <html> 
 <head>
     <META http-equiv="baby-vote" content="text/html; charset=utf-8"/>
-	<META name="description" content="baby-vote.com vote on the cutest baby pictures on the web!"/>
-    <META name="keywords" content="baby,baby war,babies,best,cute,cutest,cuter,choose,cute baby,cute babies,smiling babies,smiling baby,happy baby" />
-    <title>Baby War - Vote for the cutest baby!</title>
+	<META name="description" content="Best baby photo gallery. Cute girls and boys dressed in outfits and funny costumes."/>
+    <META name="keywords" content="baby-vote,vote,picture,pictures,photo,photos,cutest,face,faces,contest,newborn,baby,pictures,babies,pics,stuff, cute,funny,black,white,sleepy,gift,clothing,shower,name,boy,girl,toy,photography,names,games,baby r us,buy,bye,pretty,animals,american,costume,outfit,angel" />
+    <title>Baby Pictures – Vote For the Cutest Image</title>
     <link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
     
     <script type=text/javascript>
